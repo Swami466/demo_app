@@ -36,11 +36,11 @@ jobs:
           echo test, and deploy your project.
 
       - name: Deploy to CloudHub
-      env:
+        env:
         CLIENT_ID: ${{ secrets.CA_CLIENT_ID }}
         CLIENT_SECRET: ${{ secrets.CA_CLIENT_SECRET }}
         BUSINESSID: ${{ secrets.BUSINESS_GROUP_ID }}
-      run: |
-        mvn clean deploy -DmuleDeploy -Denvironment=prod -Dapp-name=Hello-demoapp \
-        -Dca.clientId=${{ secrets.CA_CLIENT_ID }} -Dca.clientSecret=${{ secrets.CA_CLIENT_SECRET }} \
-        -DbusinessGroupId=${{ secrets.BUSINESS_GROUP_ID }} -Dcicd.welcome.message="hello mule demo test app " -Duser="mr swami"
+        run: |
+          mvn clean deploy -DmuleDeploy -Denvironment=prod -Dapp-name=Hello-demoapp \
+         -Dca.clientId=${{ secrets.CA_CLIENT_ID }} -Dca.clientSecret=${{ secrets.CA_CLIENT_SECRET }} \
+         -DbusinessGroupId=${{ secrets.BUSINESS_GROUP_ID }} -Dcicd.welcome.message="hello mule demo test app " -Duser="mr swami"
